@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ecf0f1;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .profile-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        .profile-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        
+        .profile-body {
+            padding: 30px;
+        }
+        
+        .info-group {
+            margin-bottom: 20px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-wrapper">
+        <div class="profile-header">
+            <div class="avatar">👤</div>
+            <h1 id="userName">User Name</h1>
+            <p id="userEmail">user@example.com</p>
+        </div>
+        <div class="profile-body">
+            <div class="info-group">
+                <div class="info-label">Member Since</div>
+                <div class="info-value" id="joinDate">Loading...</div>
+            </div>
+            <div class="info-group">
+                <div class="info-label">Account Status</div>
+                <div class="info-value" id="status">Active</div>
+            </div>
+            <button class="btn" onclick="editProfile()">Edit Profile</button>
+            <button class="btn" onclick="logout()" style="background-color: #e74c3c; margin-top: 10px;">Logout</button>
+        </div>
+    </div>
+    
+    <script>
+        function initializeProfile() {
+            // Simulate loading profile data
+            const joinDate = new Date(2023, 0, 15);
+            document.getElementById('joinDate').textContent = joinDate.toLocaleDateString();
+            console.log('Profile initialized');
+        }
+        
+        function editProfile() {
+            alert('Edit profile functionality coming soon!');
+        }
+        
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = '/logout';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', initializeProfile);
+    </script>
+</body>
+</html>
